@@ -31,9 +31,24 @@
       <img :src="seller.avatar" width="100%" height="100% "></img>
     </div>
     <div v-show="detailShow" class="detail">
-      <div class="detail-wrapper">
+      <div class="detail-wrapper clearfix">
         <div class="detail-content">
-          <!--{{seller.supports}}-->
+          <h1 class="name">
+            {{seller.name}}
+          </h1>
+          <div class="star-wrapper">
+            <star :size="48" :score="5"></star>
+          </div>
+          <div class="title">
+            <div class="line"></div>
+            <div class="text"><p>优惠信息</p></div>
+            <div class="line"></div>
+          </div>
+          <ul v-if="seller.supports" class="supports">
+            <li class="support-item" v-for="item in seller.supports">
+              <span class="icon" :class="classMap"></span>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="detail-close">
@@ -45,6 +60,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import star from '../star/star'
   export default {
     props: ['seller'],
     data() {
@@ -60,6 +76,9 @@
     created() {
         this.classMap = ['decrease', 'discount', 'special', 'invoice',
         'guarantee']
+    },
+    components: {
+      star
     }
   }
 </script>
@@ -104,8 +123,8 @@
           .name{
             font-size: 16px;
             color: rgb(255,255,255);
-            font-weight: bold;
-            line-height: 18px;
+            font-weight: 700;
+            line-height: 16px;
           }
         }
         .description{
@@ -220,18 +239,45 @@
       .detail-wrapper{
         min-height: 100%;
         .detail-content{
-          /*margin-top: 64px;*/
+          margin-top: 64px;
           padding-bottom: 64px;
+          .name{
+            line-height: 16px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+          }
+          .star-wrapper{
+            margin-top: 18px;
+            padding: 2px 0;
+            text-align: center;
+          }
+          .title{
+            display: flex;
+            width: 80%;
+            margin: 28px auto 24px  auto;
+            .line{
+              flex: 1;
+              position: relative;
+              top: -20px;
+              border-bottom: 1px solid rgba(255,255,255,0.2);
+            }
+            .text{
+              padding: 0 12px;
+              font-size: 14px;
+            }
+          }
         }
       }
       .detail-close{
-        text-align: center;
+        position: relative;
         margin: -50px auto 0 auto;
         width: 32px;
         height: 32px;
         vertical-align: baseline;
         line-height:32px;
         font-size: 12px;
+        text-align: center;
       }
     }
   }
