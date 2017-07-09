@@ -31,7 +31,24 @@ module.exports = merge(baseWebpackConfig, {
           },
           'sass-loader'
         ]
+      },
+      {
+        test: /\.css$/,
+        include: path.resolve(__dirname, '..','./static'),
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options:{
+              plugins: (loader) => [
+                require('autoprefixer')()
+              ]
+            }
+          }
+        ]
       }
+
     ]
   },
   // cheap-module-eval-source-map is faster for development

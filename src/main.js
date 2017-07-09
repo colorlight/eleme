@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import VueResource from 'vue-resource'
 import './common/scss/index.scss'
+import '../static/reset.css'
 Vue.config.productionTip = false
 
 /* 注册vue resource */

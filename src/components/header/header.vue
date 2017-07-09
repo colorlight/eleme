@@ -121,21 +121,21 @@
             vertical-align: top;
           }
           .name{
+            margin-left: 6px;
             font-size: 16px;
-            color: rgb(255,255,255);
-            font-weight: 700;
-            line-height: 16px;
+            line-height: 18px;
+            font-weight: bold;
           }
         }
         .description{
           font-size: 12px;
           color: rgb(255,255,255);
           font-weight: 200;
-          line-height: 24px;
+          line-height: 12px;
           margin-bottom: 10px;
         }
         .support{
-          margin-bottom: 2px;
+          /*margin-bottom: 2px;*/
           font-size: 0px;
           .icon{
             display: inline-block;
