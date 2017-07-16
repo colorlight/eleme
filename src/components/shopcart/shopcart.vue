@@ -30,7 +30,7 @@
       <transition name="fold">
         <div class="shopcart-list" v-show="listShow">
           <div class="list-header">
-            <h1 class="title">物车</h1>
+            <h1 class="title">购物车</h1>
             <span class="empty" @click="empty">清空</span>
           </div>
           <div class="list-content" ref="listContent">
@@ -222,6 +222,7 @@
       },
       afterDrop(el) {
         let ball = this.dropBalls.shift();
+        console.log('lighting');
         if (ball) {
           ball.show = false;
           el.style.display = 'none';
@@ -329,13 +330,13 @@
         left: 32px
         bottom: 22px
         z-index: 200
-        transition: all 0.4s cubic-bezier(0.49, -0.29, 0.75, 0.41)
+        transition: all 1s cubic-bezier(0.49, -0.29, 0.75, 0.41)
         .inner
           width: 16px
           height: 16px
           border-radius: 50%
           background: rgb(0, 160, 220)
-          transition: all 0.4s linear
+          transition: all 1s linear
     .shopcart-list
       position: absolute
       left: 0
