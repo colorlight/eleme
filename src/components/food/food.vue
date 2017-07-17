@@ -166,7 +166,7 @@
     transform: translate3d(0, 0, 0)
     &.move-enter-active, &.move-leave-active
       transition: all 0.2s linear
-    &.move-enter, &.move-leave-active
+    &.move-enter, &.move-leave-to
       transform: translate3d(100%, 0, 0)
     .image-header
       position: relative
