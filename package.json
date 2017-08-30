@@ -2,7 +2,7 @@
   "name": "sell",
   "version": "1.0.0",
   "description": "sell app",
-  "author": "ustbhuangyi <280309453@qq.com>",
+  "author": "colorlight",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
